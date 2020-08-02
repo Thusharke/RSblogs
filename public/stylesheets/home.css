@@ -2,19 +2,110 @@
     margin : 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
 }
 body{
     background-color: steelblue;
 }
-nav{
-    background-color: white;
+.overlay{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height : 100%;
+    z-index:1;
 }
-/* }
+main{
+    height:100vh;
+    width:100%;
+    background :linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0)), url('https://images.pexels.com/photos/612800/pexels-photo-612800.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* for navbar */
+#Brand{
+    font-size: medium;
+    font-weight:700;
+}
+.nav-container{
+    margin: 0 4em;
+    color : white;
+}
+.icon{
+    margin-right:8px;
+}
+nav{
+    position: absolute;
+    width:100%;
+    height:80px;
+    line-height : 80px;
+    z-index: 2;
+    transition: all 2s;
+    background-color: rgba(0,0,0,0.3);
+}
 nav ul{
     float : right;
-}*/
-.fl{
-     list-style-type: none;
-     float:left;
-     clear:left;
-} 
+}
+nav ul li{
+    display : inline-block;
+    margin : 0 1em;
+}
+
+/* for post new button */
+button{
+    transition: all 1s;
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+button:hover{
+  color: #fff;
+  background-color: #449d44;
+  border-color: #398439;
+}
+
+/* for text animation */
+#content{
+    line-height: 50px;
+    width: 100%;
+    color: white;
+    width:35%;
+}
+h1{
+    font-weight: 600;
+    letter-spacing: 3px;
+    font-size:50px;
+}
+span{
+    color : white;
+    opacity:0;
+    transition: all 1s;
+    display: inline-block;
+    transform: translateY(-50px);
+}
+.fade{
+    opacity:1;
+    transform: translateY(0px);
+}
