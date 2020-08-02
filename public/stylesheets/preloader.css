@@ -14,7 +14,7 @@
     z-index:3;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background: rgb(37, 35, 35);
     transition: opacity 1.5s;
 } 
 .circle{
