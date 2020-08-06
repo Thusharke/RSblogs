@@ -1,18 +1,18 @@
 var preloader = document.querySelector("#preloader");
 var nav = document.querySelector("nav");
-var navtxt = document.querySelector(".nav-container")
+var navtxt = document.querySelector(".nav-container");
 var Text =  document.querySelector("h1");
 var btn = document.querySelector(".new");
+
 var strText = Text.textContent;
 var splitText = strText.split("");
 console.log(splitText);
 Text.textContent = "";
-
+//Text animation
 for(let i=0;i<splitText.length;i++){
     let char = (splitText[i] === " ") ? "&nbsp;" : splitText[i];
     Text.innerHTML += "<span>" + char + "</span>";
 }
-
 setTimeout(function(){
     let it = 0;
     let timer = setInterval(ontick,50);
@@ -34,6 +34,7 @@ setTimeout(function(){
     }
 },2500)
 
+// Preloader terminator
 function wave(){
     setTimeout(function(){
         preloader.style.opacity = 0;
@@ -45,16 +46,14 @@ function wave(){
     },2000)
 }
 
+// Styling nav while scrolled
 window.onscroll = function() {myFunction()};
 
 function myFunction() {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    nav.style.backgroundColor = "rgba(250,250,250,0.6)";
-    navtxt.style.color = 'black';
     nav.classList.add('shadow');
   } else {
-    nav.style.backgroundColor = "rgba(0,0,0,0.3)";
-    navtxt.style.color = 'white';
     nav.classList.remove('shadow');
   }
+
 }

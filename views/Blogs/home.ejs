@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="view-port" content="initial-width = device-width;initial-scale = 1.0;">
-    <link rel="shortcut icon" size="144x144" href="https://www.pngkey.com/png/detail/232-2326777_blogger-logo-icons-no-attribution-white-blog-icon.png" type="image/X-icon">
-    <link rel="stylesheet" type="text/css" href="stylesheets/home.css">
-    <link rel="stylesheet" type="text/css" href="stylesheets/preloader.css">
-    <link rel="stylesheet" href="">
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;1,600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <title>RSblogs</title>
+<%- include("../partials/header") %>
+    <link rel="stylesheet" type="text/css" href="stylesheets/home.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/preloader.css" />
 </head>
-<body  onload = "wave()">
+<body onload="wave()">
     <div id="preloader">
         <div id="circle1" class="circle"></div>
         <div id="circle2" class="circle"></div>
@@ -20,40 +11,41 @@
         <div id="circle5" class="circle"></div>
     </div>
     
-    <main class="header">
+    <header>
         <nav >
             <div class="nav-container">
                 <h3 id="Brand"><i class="fas fa-blog fa-2x"></i> RSblogs</h3>
                 <ul>
-                    <li><a href="#"><i class="fas fa-user-plus icon"></i>Sign Up</a></li>
-                    <li><a href="#"><i class="fas fa-sign-in-alt icon"></i>Login</a></li>
-                    <li><a href="#"><i class="fas fa-sign-out-alt icon"></i>Logout</a></li>
+                    <li><a href="#" class="navlinks"><i class="fas fa-user-plus icon"></i>Sign Up</a></li>
+                    <li><a href="#" class="navlinks"><i class="fas fa-sign-in-alt icon"></i>Login</a></li>
+                    <li><a href="#" class="navlinks"><i class="fas fa-sign-out-alt icon"></i>Logout</a></li>
                 </ul>
             </div>
-        </nav>
-
+        </nav> -->
         <div class="overlay">
             <div id="content">
                 <h1>Write To Inspire</h1>
-                <p><button class="new"><i class="fas fa-plus fa-xs"></i> Add new post</button></p>
+                <p><a href="./blogs/new" class="new"><i class="fas fa-plus fa-xs"></i> Add new post</a></p>
             </div>
         </div>
-    </main>
+    </header>
     
     <section class = "posts">
-        
+        <% blogs.forEach(function(blog){ %>
+              <div class = "post">
+                    <img class ="post-image" src="<%= blog.image %>" alt="This is an image realted to the article" height="60%" width="100%">
+                    <div class="post-details">
+                        <h3 class="post-title"><%= blog.title%></h3>
+                        <p><a class="btnone" href="#">Read</a></p>
+                    </div>
+              </div>
+        <% }) %>
     </section>
 
-    
-
-
-
-
-
-
+    <section class = "footer" style="color:white;display: flex;justify-content: center;align-items: center;">
+        <h4>made with immense love by thushar please do give it a shot on the review</h4>
+    </section>
 
 
     <script type="text/javascript" src="JS/home.js"></script>
-    <script src="https://kit.fontawesome.com/f3ca4af96f.js" crossorigin="anonymous"></script>
-</body>
-</html>
+<%- include("../partials/footer") %>
