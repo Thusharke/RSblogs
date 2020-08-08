@@ -1,0 +1,8 @@
+<%- include("../partials/header")%>
+</head>
+<body>
+    <h1><%= post.title %></h1>
+    <img src="<%= post.image %>" alt="post related image" width="400px" height="auto">
+    <p><%= post.description %></p>
+    <p>written by - <%= post.author %></p>
+<%- include("../partials/footer")%>

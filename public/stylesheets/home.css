@@ -67,7 +67,7 @@ nav ul li{
 .shadow{
     height: 10vh;
     background-color: rgba(22, 21, 21, 1);
-    box-shadow: 1px 3px 11px 0px rgb(43, 41, 43);
+    box-shadow: 0px 2px 13px -1px rgba(69,69,69,1);
 } 
 
 /* for post new button */
@@ -135,9 +135,20 @@ a{
 
 
 /*Post display styling */
+.post-section{
+    background: #FFB75E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ED8F03, #FFB75E);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ED8F03, #FFB75E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.section-heading{
+    font-family: 'Lobster', cursive;
+    font-size:50px;
+    padding : 0.5em;
+    text-align : center;
+}
 .posts{
-    background-color: rgb(230, 230, 230);
-    padding-top: 3em;
+    padding-top: 2em;
     min-height: 100vh;
     display: flex;
     flex-wrap : wrap;
@@ -145,15 +156,16 @@ a{
     align-items: center;
 } 
 .post{
-    background-color: rgb(240, 236, 236);
+    background-color: rgb(245, 185, 137);
     border-radius:5%;
     width : 30%;
     height : auto;
-    margin-bottom : 2em;
-    border : 1px solid rgb(199, 194, 194);
-    box-shadow: 3px 3px 7px 2px rgba(217,217,217,1);
+    margin: 0 1.5em;
+    margin-bottom : 6em;
+    box-shadow: 0px 0px 13px -1px rgba(143,143,143,1);
 }
 .post-image{
+    padding: 4px;
     border-top-left-radius : 5%;
     border-top-right-radius: 5%;
 }
@@ -167,7 +179,7 @@ a{
 }
 .btnone{
   display: inline-block;
-  padding: 6px 12px;
+  padding: 6px 18px;
   margin-bottom: 0.4em;
   font-size: 16px;
   font-weight: normal;
@@ -188,9 +200,14 @@ a{
   background-color: #449d44;
   border-color: #398439;
 }
+
 .footer{
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width:100%;
-    height : 40vh;
+    height : 10vh;
     background-color: rgb(20, 18, 18);
 }
 

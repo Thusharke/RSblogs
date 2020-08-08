@@ -41,5 +41,16 @@ router.post("/blogs",function(req,res){
         }
     })
 })
+//4.show- renders show page of a particular blog
+router.get("/blogs/:id",function(req,res){
+    blog.findById(req.params.id,function(err,post){
+        if(err){
+            console.log("SOMETHING WENT WRONG!!");
+        }
+        else{
+            res.render("../views/Blogs/show",{post : post});
+        }
+    })
+}) 
 
 module.exports = router;

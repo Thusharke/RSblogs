@@ -3,6 +3,8 @@ var express  = require('express');
 var app = express();
 var bodyparser = require('body-parser');
 var mongoose = require('mongoose');
+var passport = require('passport');
+var localStrategy = require('passport-local');
 
 //requiring all the routes
 var BlogRoutes = require("./routes/blogs") ;

@@ -30,20 +30,24 @@
         </div>
     </header>
     
-    <section class = "posts">
-        <% blogs.forEach(function(blog){ %>
-              <div class = "post">
-                    <img class ="post-image" src="<%= blog.image %>" alt="This is an image realted to the article" height="60%" width="100%">
-                    <div class="post-details">
-                        <h3 class="post-title"><%= blog.title%></h3>
-                        <p><a class="btnone" href="#">Read</a></p>
-                    </div>
-              </div>
-        <% }) %>
+    <section class="post-section">
+        <h1 class="section-heading">Trending Posts</h1>
+        <hr>
+        <div class="posts">
+            <% blogs.forEach(function(blog){ %>
+                <div class = "post">
+                        <img class ="post-image" src="<%= blog.image %>" alt="This is an image realted to the article" height="60%" width="100%">
+                        <div class="post-details">
+                            <h3 class="post-title"><%= blog.title%></h3>
+                            <p><a class="btnone" href="/blogs/<%= blog._id %>">Read</a></p>
+                        </div>
+                </div>
+            <% }) %>
+        </div>
     </section>
 
-    <section class = "footer" style="color:white;display: flex;justify-content: center;align-items: center;">
-        <h4>made with immense love by thushar please do give it a shot on the review</h4>
+    <section class = "footer">
+        <h4>© all copy rights reserved,made with immense love by thushar </h4>
     </section>
 
 
