@@ -16,6 +16,7 @@ router.get("/blogs",function(req,res){
             console.log("SOMETHING WENT WRONG!!");
         }
         else{
+            console.log(req.user);
             res.render("../views/Blogs/home",{blogs : blogs});
         }
     })
@@ -44,6 +45,7 @@ router.post("/blogs",function(req,res){
 //4.show- renders show page of a particular blog
 router.get("/blogs/:id",function(req,res){
     blog.findById(req.params.id,function(err,post){
+        console.log(post);
         if(err){
             console.log("SOMETHING WENT WRONG!!");
         }

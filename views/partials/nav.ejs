@@ -1,0 +1,15 @@
+<nav >
+    <div class="nav-container">
+        <a href="/blogs"><h3 id="Brand">RSblogs</h3></a>
+        <ul>
+            <% if(!currUser) {%>
+            <li><a href="/register" class="navlinks"><i class="fas fa-user-plus icon"></i>Sign Up</a></li>
+            <li><a href="/login" class="navlinks"><i class="fas fa-sign-in-alt icon"></i>Login</a></li>
+            <% } else { %>
+                <li><a href="/register" class="navlinks"><i class="fas fa-user icon"></i>Signed is as <%= currUser.username %></a></li>
+            <li><a href="/logout" class="navlinks"><i class="fas fa-sign-out-alt icon"></i>Logout</a></li>
+            <% } %>
+            
+        </ul>
+    </div>
+</nav> 

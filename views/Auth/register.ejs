@@ -1,0 +1,47 @@
+<%- include("../partials/header") %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/new.css" />
+</head>
+<body>
+
+<%- include("../partials/nav") %>
+<h1 class="heading">Register</h1>
+<form class="newForm" action="/register" method="POST">
+    <div class="From-tag">
+        <label for="username">Name</label>
+        <input type="text" name="username" autocomplete="none" placeholder="Jhon Doe" required>
+    </div>
+    <div class="From-tag">
+        <label for="email">Email</label>
+        <input type="email" name="email" autocomplete="none" placeholder="Enter email" required>
+    </div>
+    <div class="From-tag">
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="Enter password" required>
+        <button type="submit" class="new">Register</button>
+        <a class="new" href="/login">Login</a>
+    </div>
+</form>
+
+
+<!-- 
+
+</head>
+<body>
+<h1>Register</h1>
+<form action="/register" method="POST">
+    <div>
+        <label for="username">name</label>
+        <input type="text" name="username" required>
+    </div>
+    <div>
+        <label for="email">email</label>
+        <input type="email" name="email" required>
+    </div>
+    <div>
+        <label for="password">password</label>
+        <input type="password" name="password" required>
+    </div>
+    <input type="submit" value="register">
+</form>
+<a href="/login">login</a> -->
+<%- include("../partials/footer")%>
