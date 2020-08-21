@@ -27,6 +27,7 @@ router.get("/blogs/new",function(req,res){
 })
 //3.create- Takes data from the new form and creates a new blog
 router.post("/blogs",function(req,res){
+    req.body.description = req.sanitize(req.body.description);
     blog.create({
         author : req.body.author,
         title : req.body.title,
@@ -54,5 +55,45 @@ router.get("/blogs/:id",function(req,res){
         }
     })
 }) 
+//5.edit- renders edit form for the particular blog
+router.get("/blogs/:id/edit",function(req,res){
+    blog.findById(req.params.id,function(err,post){
+        if(err){
+            console.log(err);
+            res.send("OOPS could not the find the page");
+        }
+        else{
+            res.render("../views/Blogs/edit.ejs",{post:post})
+        }
+    })
+})
+//6.update - updating the blog from the information we got from edit form
+router.put("/blogs/:id",function(req,res){
+    req.body.description = req.sanitize(req.body.description);
+    blog.findByIdAndUpdate(req.params.id,req.body,function(err,post){
+        if(err){
+            console.log(err);
+            res.redirect("/blogs");
+        }
+        else{
+            console.log("A blog has been updated successfully");
+            res.redirect("/blogs/" + post._id);
+        }
+    })
+})
+//7.destroy - deletes the post from the database
+router.delete("/blogs/:id",function(req,res){
+    console.log("put hello");
+    blog.findByIdAndRemove(req.params.id,function(err,post){
+        if(err){
+            console.log(err);
+            res.redirect("/blogs");
+        }
+        else{
+            console.log("A blog has been removed successfully");
+            res.redirect("/blogs");
+        }
+    })
+})
 
 module.exports = router;

@@ -1,9 +1,26 @@
 <%- include("../partials/header")%>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/show.css">
 </head>
 <body>
     <%- include("../partials/nav") %>
-    <h1><%= post.title %></h1>
-    <img src="<%= post.image %>" alt="post related image" width="400px" height="auto">
-    <p><%= post.description %></p>
-    <p>written by - <%= post.author %></p>
+
+    <h1 class="blog-title"><%= post.title %></h1>
+
+    <section class="blog-content">
+
+        <img class="blog-img" src="<%= post.image %>" alt="post related image" width="400px" height="auto">
+
+        <div class="blog-desc">
+            <p>
+                <%- post.description %>
+            </p>
+            <p class="tag-line"><em>written by - <%= post.author %><em></p>
+            <a class="new warning" href="/blogs/<%= post._id %>/edit" >Edit</a>
+            <form action="/blogs/<%= post._id %>/?_method=DELETE" method="POST" style="display: inline-block;">
+                <button type="submit" class="new danger" >Delete</button>
+            </form>
+        </div>
+        
+    </section>
+
 <%- include("../partials/footer")%>

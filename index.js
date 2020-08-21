@@ -1,10 +1,12 @@
 //requiring all the installed packages
 var express  = require('express');
+var methodOverride = require('method-override')
 var app = express();
 var bodyparser = require('body-parser');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local');
+var expressSanitizer = require('express-sanitizer')
 
 //requiring all the routes
 var blogRoutes = require("./routes/blogs");
@@ -14,11 +16,7 @@ var authRoutes = require("./routes/auth");
 var url = process.env.DATABASEURL || "mongodb://localhost/RSblogs";
 mongoose.connect(url,{useNewUrlParser:true,useUnifiedTopology:true});
 
-//Using the required packages
 app.set("view engine","ejs");
-app.use(express.static(__dirname + "/public"));
-app.use(bodyparser.urlencoded({extended:true}));
-
 
 //loading the user model
 var User = require("./models/user.js");
@@ -36,6 +34,11 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 //middleware
+app.use(express.json());
+app.use(expressSanitizer());
+app.use(express.static(__dirname + "/public"));
+app.use(methodOverride('_method'));
+app.use(bodyparser.urlencoded({extended:true}));
 app.use(function(req,res,next){
     res.locals.currUser = req.user;
     next();

@@ -40,6 +40,17 @@ input{
     border-radius: 3px;;
     border: solid 1px rgb(167, 167, 167);
 }
+textarea{
+    width: 100%;
+    font-size:15px;
+    line-height: 3vh;
+    padding:10px;
+    background-color: white;
+    border: none;
+    border-radius: 3px;;
+    border: solid 1px rgb(167, 167, 167);
+    outline: none;
+}
 .new{
     outline: none;
     transition: all 0.5s;
@@ -69,3 +80,4 @@ input{
 a{
     display: inline-block;
 }
+
