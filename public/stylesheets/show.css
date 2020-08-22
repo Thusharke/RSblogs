@@ -49,6 +49,7 @@ body{
     transition: all 0.5s;
     padding: 8px 16px;
     margin-top:20px;
+    margin-right:5px;
     margin-bottom: 0;
     font-size: 15px;
     font-weight: normal;
@@ -92,6 +93,7 @@ body{
 }
 a{
     display: inline-block;
+    text-decoration: none;
 }
 .slide-up{
     opacity: 1;
