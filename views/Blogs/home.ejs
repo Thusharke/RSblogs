@@ -4,11 +4,14 @@
 </head>
 <body onload="wave()">
     <div id="preloader">
-        <div id="circle1" class="circle"></div>
-        <div id="circle2" class="circle"></div>
-        <div id="circle3" class="circle"></div>
-        <div id="circle4" class="circle"></div>
-        <div id="circle5" class="circle"></div>
+        <div id="loadText">Loading</div>
+        <div class="animation">
+            <div id="circle1" class="circle"></div>
+            <div id="circle2" class="circle"></div>
+            <div id="circle3" class="circle"></div>
+            <div id="circle4" class="circle"></div>
+            <div id="circle5" class="circle"></div>
+        </div>
     </div>
     
     <header>
@@ -23,14 +26,22 @@
     
     <section class="post-section">
         <h1 class="section-heading">Trending Posts</h1>
-        <hr>
         <div class="posts">
             <% blogs.forEach(function(blog){ %>
                 <div class = "post">
-                        <img class ="post-image" src="<%= blog.image %>" alt="This is an image realted to the article" height="60%" width="100%">
+                        <div class ="post-image">
+                            <img class="img" src="<%= blog.image %>" alt="This is an image realted to the article">
+                        </div>
                         <div class="post-details">
-                            <h3 class="post-title"><%= blog.title%></h3>
-                            <p><a class="btnone" href="/blogs/<%= blog._id %>">Read</a></p>
+                            <div class="title-div">
+                                <h3 class="post-title"><%= blog.title%></h3>
+                            </div>
+                            <div class="desc-div">
+                                <p class="post-desc"><%- blog.description.substring(0,300) %>.......</p>   
+                            </div>
+                            <div class="btn-div">
+                                <p><a class="btnone" href="/blogs/<%= blog._id %>">Read More</a></p>
+                            </div>
                         </div>
                 </div>
             <% }) %>

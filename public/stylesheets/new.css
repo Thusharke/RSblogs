@@ -77,6 +77,16 @@ textarea{
   background-color: #1890db;
   border-color: #0e7cc0;
 }
+.warning{
+    background-color: #f0ad4e;
+    border-color: #eea236;
+}
+.warning:hover{
+    outline: none;
+    color: #fff;
+    background-color: #eea032;
+    border-color: #e99622;
+}
 a{
     display: inline-block;
 }

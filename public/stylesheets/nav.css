@@ -11,8 +11,8 @@ body{
     background-color: white;
 }
 #Brand{
-    color : rgb(34, 34, 34);
     font-size: x-large;
+    letter-spacing: 0.08rem;
     font-weight:700;
     width:30%;
 }
@@ -32,12 +32,13 @@ nav{
     height:10vh;
     z-index: 2;
     transition: all 0.5s;
-    background-color: rgb(238, 191, 153);
+    background-color: rgb(238, 178, 129);
+    box-shadow: 0px 2px 13px -1px rgba(69,69,69,0.25);
 }
 nav ul{
     list-style: none;
     display: flex;
-    width : 35%;
+    width : 40%;
     justify-content: space-around;
     align-items: center;
 }
@@ -45,11 +46,13 @@ nav ul li{
     margin : 0 1em;
 }
 .shadow{
-    background-color: rgb(238, 191, 153);
-    box-shadow: 0px 2px 13px -1px rgba(69,69,69,1);
+    background-color: rgb(238, 178, 129);
+    box-shadow: 0px 2px 13px -1px rgba(69,69,69,0.25);
 } 
 a{
+    font-size: 17px;
     text-decoration: none;
-    color : rgb(34, 34, 34);
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 7px rgba(34, 34, 34, 0.3);
     transition: all 0.5s;
 }

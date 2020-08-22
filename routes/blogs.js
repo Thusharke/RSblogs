@@ -1,5 +1,6 @@
 var express = require("express");
 var router = express.Router();
+var middlewareObj = require('../middleware/index.js');
 
 //Requiring the model
 var blog = require("../models/blog.js");
@@ -29,7 +30,7 @@ router.get("/blogs/new",function(req,res){
 router.post("/blogs",function(req,res){
     req.body.description = req.sanitize(req.body.description);
     blog.create({
-        author : req.body.author,
+        author : {id : req.user._id, username : req.user.username},
         title : req.body.title,
         image : req.body.image,
         description : req.body.description
@@ -56,7 +57,7 @@ router.get("/blogs/:id",function(req,res){
     })
 }) 
 //5.edit- renders edit form for the particular blog
-router.get("/blogs/:id/edit",function(req,res){
+router.get("/blogs/:id/edit",middlewareObj.checkBlogOwnership,function(req,res){
     blog.findById(req.params.id,function(err,post){
         if(err){
             console.log(err);
@@ -68,7 +69,7 @@ router.get("/blogs/:id/edit",function(req,res){
     })
 })
 //6.update - updating the blog from the information we got from edit form
-router.put("/blogs/:id",function(req,res){
+router.put("/blogs/:id",middlewareObj.checkBlogOwnership,function(req,res){
     req.body.description = req.sanitize(req.body.description);
     blog.findByIdAndUpdate(req.params.id,req.body,function(err,post){
         if(err){
@@ -82,7 +83,7 @@ router.put("/blogs/:id",function(req,res){
     })
 })
 //7.destroy - deletes the post from the database
-router.delete("/blogs/:id",function(req,res){
+router.delete("/blogs/:id",middlewareObj.checkBlogOwnership,function(req,res){
     console.log("put hello");
     blog.findByIdAndRemove(req.params.id,function(err,post){
         if(err){

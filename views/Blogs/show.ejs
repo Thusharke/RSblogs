@@ -14,13 +14,15 @@
             <p>
                 <%- post.description %>
             </p>
-            <p class="tag-line"><em>written by - <%= post.author %><em></p>
+            <p class="tag-line"><em>written by - <%= post.author.username %><em></p>
+            <% if(currUser && currUser._id.equals(post.author.id)){ %>
             <a class="new warning" href="/blogs/<%= post._id %>/edit" >Edit</a>
             <form action="/blogs/<%= post._id %>/?_method=DELETE" method="POST" style="display: inline-block;">
                 <button type="submit" class="new danger" >Delete</button>
             </form>
+            <% } %>
         </div>
         
     </section>
-
+    <script type="text/javascript" src="/JS/show.js"></script>
 <%- include("../partials/footer")%>
