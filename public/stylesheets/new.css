@@ -8,13 +8,13 @@ body{
     background-color: rgb(236, 233, 233);
 }
 .heading{
-    margin-top: 10vh;
+    margin-top: 15vh;
     margin-bottom: 2vh;
     text-align: center;
 }
 .newForm{
     padding : 30px;
-    width : 50vw;
+    width : 35vw;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -88,6 +88,7 @@ textarea{
     border-color: #e99622;
 }
 a{
+    text-decoration:none;
     display: inline-block;
 }
 

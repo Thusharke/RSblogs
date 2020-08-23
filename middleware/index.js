@@ -13,12 +13,24 @@ middlewareObj.checkBlogOwnership = function checkBlogOwnership(req,res,next){
                     next();
                 }
                 else{
+                    req.flash("error","You are not allowed to do that!")
                     res.redirect("back")
                 }
             }
         })
     }
     else{
+        req.flash("error","You have to be logged in to do that!")
+        res.redirect("/login")
+    }
+}
+
+middlewareObj.isLoggedIn = function isLoggedIn(req,res,next){
+    if(req.isAuthenticated()){
+        next();
+    }
+    else{
+        req.flash("error","You have to be logged in to do that!")
         res.redirect("/login")
     }
 }

@@ -6,7 +6,10 @@ var bodyparser = require('body-parser');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local');
-var expressSanitizer = require('express-sanitizer')
+var expressSanitizer = require('express-sanitizer');
+var flash = require('connect-flash');
+app.locals.moment = require('moment');
+
 
 //requiring all the routes
 var blogRoutes = require("./routes/blogs");
@@ -34,6 +37,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 //middleware
+app.use(flash());
 app.use(express.json());
 app.use(expressSanitizer());
 app.use(express.static(__dirname + "/public"));
@@ -41,6 +45,8 @@ app.use(methodOverride('_method'));
 app.use(bodyparser.urlencoded({extended:true}));
 app.use(function(req,res,next){
     res.locals.currUser = req.user;
+    res.locals.success = req.flash("success");
+    res.locals.error = req.flash("error");
     next();
 });
 

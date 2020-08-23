@@ -11,7 +11,7 @@ Text.textContent = "";
 //Text animation
 for(let i=0;i<splitText.length;i++){
     let char = (splitText[i] === " ") ? "&nbsp;" : splitText[i];
-    Text.innerHTML += "<span>" + char + "</span>";
+    Text.innerHTML += '<span class="letter">' + char + '</span>';
 }
 setTimeout(function(){
     let it = 0;
@@ -32,18 +32,18 @@ setTimeout(function(){
         clearInterval(timer);
         timer = null;
     }
-},2500)
+},2000)
 
 // Preloader terminator
 function wave(){
     setTimeout(function(){
         preloader.style.opacity = 0;
-    },1000)
+    },500)
     setTimeout(function(){
         preloader.style.display = 'none';
         nav.style.opacity = 1;
         btn.classList.add('animate');
-    },2000)
+    },1500)
 }
 
 // Styling nav while scrolled

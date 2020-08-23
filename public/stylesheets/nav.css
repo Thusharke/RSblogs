@@ -60,3 +60,34 @@ nav ul li{
     text-shadow: 2px 2px 7px rgba(34, 34, 34, 0.3);
     transition: all 0.5s;
 }
+
+.alert{
+    width:50%;
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin:0.8em auto;
+    transition : all 0.5s;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+.alert-success{
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+.alert-danger{
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+.cross{
+    display: inline-block;
+    cursor: pointer;
+    float: right;
+}
+.fade-off{
+    opacity: 0;
+}
+.slide-down{
+    transform: translateY(5vh);
+}

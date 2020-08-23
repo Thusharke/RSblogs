@@ -40,7 +40,8 @@
                                 <p class="post-desc"><%- blog.description.substring(0,300) %>.......</p>   
                             </div>
                             <div class="btn-div">
-                                <p><a class="btnone" href="/blogs/<%= blog._id %>">Read More</a></p>
+                                <p id="time">Submitted by :- <%= blog.author.username %>, <%- moment(blog.createdAt).fromNow()%></p>
+                                <a class="btnone" href="/blogs/<%= blog._id %>">Read More</a>
                             </div>
                         </div>
                 </div>
