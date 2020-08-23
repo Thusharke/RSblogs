@@ -77,7 +77,7 @@ router.put("/blogs/:id",middlewareObj.checkBlogOwnership,function(req,res){
             res.redirect("/blogs");
         }
         else{
-            console.log("A blog has been updated successfully");
+            req.flash("success","Blog has been successfully updated!")
             res.redirect("/blogs/" + post._id);
         }
     })
@@ -92,6 +92,7 @@ router.delete("/blogs/:id",middlewareObj.checkBlogOwnership,function(req,res){
         }
         else{
             console.log("A blog has been removed successfully");
+            req.flash("success","Blog has been successfully deleted!")
             res.redirect("/blogs");
         }
     })
