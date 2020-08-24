@@ -92,7 +92,7 @@ h1{
 
 /*Post display styling */
 .post-section{
-    background-color: rgb(238, 169, 113);
+    background-color: rgb(240, 155, 85);
 }
 .section-heading{
     font-family: 'Lobster', cursive;
@@ -229,6 +229,10 @@ h1{
     width:100%;
     height : 10vh;
     background-color: rgb(226, 226, 226);
+}
+.foot{
+    text-align:center;
+    width:80%;
 }
 a{
     text-decoration:none;

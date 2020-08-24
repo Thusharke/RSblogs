@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: rgb(238, 169, 113);
+    background-color: rgb(240, 155, 85);
 }
 @media (min-width:540px){
     .blog{
