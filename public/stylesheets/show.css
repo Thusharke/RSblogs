@@ -6,13 +6,24 @@
 body{
     background-color: rgb(238, 169, 113);
 }
+@media (min-width:540px){
+    .blog{
+        margin: 0 auto;
+        margin-top:20vh;
+        width:50%;
+    }
+}
+@media (max-width:540px){
+    .blog{
+        margin: 0 auto;
+        margin-top:20vh;
+        width:90%;
+    }
+}
 .blog-title{
     opacity : 0;
     transform: translateX(-50px);
     transition : all 0.5s;
-    width:50%;
-    margin: 0 auto;
-    margin-top: 10vh;
     margin-bottom: 2vh;
     font-size: xx-large;
     letter-spacing: 1px;
@@ -23,8 +34,6 @@ body{
     opacity : 0;
     transform: translateY(50px);
     transition : all 0.5s;
-    width:50%;
-    margin : 0 auto;
     margin-bottom: 20vh;
     padding : 5px;
     background-color: rgb(230, 227, 227);

@@ -12,13 +12,35 @@ body{
     margin-bottom: 2vh;
     text-align: center;
 }
-.newForm{
-    padding : 30px;
-    width : 35vw;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    margin : 0 auto;
+@media (min-width:540px){
+    .newForm{
+        padding : 30px;
+        width : 35vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        margin : 0 auto;
+    }
+    .heading{
+        margin-top: 25vh;
+        margin-bottom: 2vh;
+        text-align: center;
+    }
+}
+@media (max-width:540px){
+    .newForm{
+        padding : 30px;
+        width : 90vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        margin : 0 auto;
+    }
+    .heading{
+        margin-top: 25vh;
+        margin-bottom: 2vh;
+        text-align: center;
+    }
 }
 .From-tag{
     margin: 0.5em 0;
